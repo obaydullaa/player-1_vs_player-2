@@ -3,7 +3,7 @@ function App() {
   return (
     <div>
       <h2>
-          Learn React
+          Learn React Some Edit.
       </h2>
     </div>
   );
