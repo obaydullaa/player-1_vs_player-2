@@ -1,13 +1,42 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  width: 500px;
+  background: #d94a38;
+  text-align: center;
+  margin: 50px auto;
+  padding: 40px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button.btn {
+  border: 0;
+  padding: 10px 30px;
+  background: azure;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: .3s all;
+}
+button.btn:hover {
+  background: #d94a38;
+  border: 1px solid #f0ffff;
+  color: #fff;
+}
+
+form.form-wrap input {
+  height: 33px;
+  border: 0;
+}
+
+/* Disabled class for player */
+
+.disablepOn {
+  pointer-events: none;
+}
+.disablepTwo {
+  pointer-events: none;
+}
+.activePlayerOn {
+  pointer-events: all;
+}
+.activePlayerTwo {
+  pointer-events: all;
 }
