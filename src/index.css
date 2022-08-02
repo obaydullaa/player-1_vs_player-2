@@ -28,15 +28,17 @@ form.form-wrap input {
 
 /* Disabled class for player */
 
-.disablepOn {
+.disableBtn {
   pointer-events: none;
+  opacity: .65;
 }
-.disablepTwo {
-  pointer-events: none;
-}
+
 .activePlayerOn {
   pointer-events: all;
 }
 .activePlayerTwo {
   pointer-events: all;
+}
+.hideinput {
+  display: none;
 }
