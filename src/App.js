@@ -66,12 +66,21 @@ const handleClickBtn = (e) => {
     setPlayerOneValue(randomNumber(parseInt(winningScore)))
     setIsPlayerOneBtnHide(true)
     setIsPlayerTwoBtnHide(false)
+
+    // const playerOneValueNew = playerOneValue + 1;
+    if(winningScore === playerOneValue){
+      console.log('winner player One')
+    }
     
   } else if (e.target.innerHTML == 'Player 02') {
     setplayerTwoValue(randomNumber(parseInt(winningScore)))
     setIsPlayerTwoBtnHide(true)
     setIsPlayerOneBtnHide(false)
 
+    // const playerTwoValueNew = playerTwoValue + 1;
+    if(winningScore === playerTwoValue){
+      console.log('winner player Two')
+    }
 
   } else {
     console.log('reset')
@@ -84,13 +93,9 @@ const randomNumber = (num) => {
   return random;
 }
 
-if(winningScore === playerOneValue){
-  alert('winner player One')
-}
 
-if(winningScore === playerTwoValue){
-  alert('winner player Two')
-}
+
+
 
   return (
     <div className='container'>

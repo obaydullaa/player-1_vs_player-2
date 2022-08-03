@@ -36,9 +36,7 @@ form.form-wrap input {
 .activePlayerOn {
   pointer-events: all;
 }
-.activePlayerTwo {
-  pointer-events: all;
-}
+
 .hideinput {
   display: none;
 }
