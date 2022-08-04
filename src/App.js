@@ -60,8 +60,8 @@ function App() {
       setIsPlayerTwoBtnHide(false);
     } else if (e.target.innerHTML === "Player 02") {
       setPlayerTwoValue(randomNumber(parseInt(winningScore)));
-      setIsPlayerOneBtnHide(true);
-      setIsPlayerTwoBtnHide(false);
+      setIsPlayerOneBtnHide(false);
+      setIsPlayerTwoBtnHide(true);
     } else {
       setWinningScore(7);
       setWinningScoreInput("");
