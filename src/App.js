@@ -39,15 +39,15 @@ function App() {
 //      d. Enable p1 and p2 btn
 
 
-  const [winningScore, setWinningScore] = useState(10); 
-  const [winningScoreInput, setWinningScoreInput] = useState(''); 
-  const [isInputHide, setIsInputHide] = useState(false); 
-  const [playerOneValue, setPlayerOneValue] = useState(0); 
-  const [playerTwoValue, setplayerTwoValue] = useState(0); 
-  const [isPlayerOneBtnHide, setIsPlayerOneBtnHide] = useState(false); 
-  const [isPlayerTwoBtnHide, setIsPlayerTwoBtnHide] = useState(false); 
+const [winningScore, setWinningScore] = useState(10); 
+const [winningScoreInput, setWinningScoreInput] = useState(''); 
+const [isInputHide, setIsInputHide] = useState(false); 
+const [playerOneValue, setPlayerOneValue] = useState(0); 
+const [playerTwoValue, setPlayerTwoValue] = useState(0); 
+const [isPlayerOneBtnHide, setIsPlayerOneBtnHide] = useState(false); 
+const [isPlayerTwoBtnHide, setIsPlayerTwoBtnHide] = useState(false); 
+const [winnerMsg, setWinnerMsg] = useState(''); 
 
- 
 const handleSubmit = (e) => {
   e.preventDefault()
   setWinningScore(winningScoreInput)
@@ -55,37 +55,43 @@ const handleSubmit = (e) => {
 }
 
 const handleChange = (e) => {
-  // e.preventDefault();
   setWinningScoreInput(parseInt(e.target.value))
 }
 
 const handleClickBtn = (e) => {
-
-
-  if (e.target.innerHTML == 'Player 01') {
-    setPlayerOneValue(randomNumber(parseInt(winningScore)))
+  if (e.target.innerHTML === 'Player 01') {
+    const validPlayerOne = randomNumber(parseInt(winningScore))
+    setPlayerOneValue(validPlayerOne)
     setIsPlayerOneBtnHide(true)
     setIsPlayerTwoBtnHide(false)
 
-    // const playerOneValueNew = playerOneValue + 1;
-    if(winningScore === playerOneValue){
-      console.log('winner player One')
+    if(winningScore === validPlayerOne){
+      setWinnerMsg('Player One is Winner')
+      setIsPlayerTwoBtnHide(true)
+      setIsPlayerOneBtnHide(true)
     }
     
-  } else if (e.target.innerHTML == 'Player 02') {
-    setplayerTwoValue(randomNumber(parseInt(winningScore)))
+  } else if (e.target.innerHTML === 'Player 02') {
+    const validPlayerTwo = randomNumber(parseInt(winningScore))
+    setPlayerTwoValue(validPlayerTwo)
     setIsPlayerTwoBtnHide(true)
     setIsPlayerOneBtnHide(false)
 
-    // const playerTwoValueNew = playerTwoValue + 1;
-    if(winningScore === playerTwoValue){
-      console.log('winner player Two')
+    if(winningScore === validPlayerTwo){
+      setWinnerMsg('Player Two is Winner')
+      setIsPlayerTwoBtnHide(true)
+      setIsPlayerOneBtnHide(true)
     }
-
   } else {
-    console.log('reset')
+    setWinningScore(10); 
+    setWinningScoreInput(''); 
+    setIsInputHide(false); 
+    setPlayerOneValue(0); 
+    setPlayerTwoValue(0); 
+    setIsPlayerOneBtnHide(false); 
+    setIsPlayerTwoBtnHide(false); 
+    setWinnerMsg('');
   }
-  
 }
 
 const randomNumber = (num) => {
@@ -93,12 +99,9 @@ const randomNumber = (num) => {
   return random;
 }
 
-
-
-
-
   return (
     <div className='container'>
+      <h1>{winnerMsg}</h1>
       <ScoreCard winningScore={winningScore}/>
       <div className="players">
         <h3>Player-One: {playerOneValue}</h3>
