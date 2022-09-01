@@ -108,7 +108,7 @@ const randomNumber = (num) => {
         <h3>Player-Two: {playerTwoValue}</h3>
       </div>
         <form className="form-wrap" onSubmit={handleSubmit}>
-          <input className={`${isInputHide ? 'hideinput' : ''}`} onChange={handleChange} value={winningScoreInput} required='required' type="number" placeholder="Enter Your Score Number"  id="input"/>
+          <input className={`${isInputHide ? 'hideinput' : ''}`} onChange={handleChange} value={winningScoreInput} required='required' type="number" placeholder=" Score Number"  id="input"/>
           <button className={`btn ${isInputHide ? 'hideinput' : ''}`} type="submit" >Submit</button>
       </form>
       <div className="player-btn-wrap">
